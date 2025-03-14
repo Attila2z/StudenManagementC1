@@ -4,7 +4,10 @@
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public int Credits { get; set; }
+        // Change from:
+        // public int Credits { get; set; }
+        // To:
+        public decimal Credits { get; set; }
 
         // Navigation property: one course can have multiple enrollments
         public List<Enrollment> Enrollments { get; set; }
