@@ -8,5 +8,9 @@
 
         // Navigation property: one course can have multiple enrollments
         public List<Enrollment> Enrollments { get; set; }
+
+        public int? InstructorId { get; set; }  
+        public Instructor? Instructor { get; set; }
+
     }
 }
