@@ -28,7 +28,11 @@ namespace StudentManagement.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Add any model configuration here.
+            // Configure the one-to-one relationship if necessary
+            modelBuilder.Entity<Department>()
+                .HasOne(d => d.DepartmentHead)
+                .WithMany() // Assuming an instructor can be a department head for only one department
+                .HasForeignKey(d => d.DepartmentHeadId);
         }
     }
 }
